@@ -18,6 +18,9 @@ const pool = new Pool({
   user:     process.env.DB_USER     || 'casino',
   password: process.env.DB_PASSWORD || 'casino',
   database: process.env.DB_NAME     || 'casino_db',
+  ssl: {
+    rejectUnauthorized: false
+  },
   // max controla cuántas conexiones simultáneas puede abrir este proceso.
   // Ajustarlo según los recursos del contenedor y los límites de la BD.
   max: 10,
